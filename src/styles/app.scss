@@ -1,0 +1,133 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  color: $secondary;
+  background-color: $bg;
+}
+
+#app {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.attribution {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0.3rem;
+  opacity: 0.5;
+
+  a {
+    color: $primary;
+  }
+}
+
+.advice {
+  &-card {
+    position: relative;
+    width: 540px;
+    min-width: 540px;
+    min-height: 332px;
+    background-color: $bg-alt;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 30px 50px 80px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 768px) {
+      width: 343px;
+      height: 315px;
+      min-width: 343px;
+      min-height: 315px;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    &__header {
+      p {
+        height: 18px;
+      }
+      width: 100%;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 4px;
+      display: flex;
+      justify-content: center;
+      color: $primary;
+    }
+
+    &__body {
+      height: calc(332px / 2.5);
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 1.75rem;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 768px) {
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    &__divider {
+      background-image: url("../assets/images/pattern-divider-desktop.svg");
+      width: 100%;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      @media screen and (max-width: 768px) {
+        background-image: url("../assets/images/pattern-divider-mobile.svg");
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: -9%;
+      border-radius: 50%;
+      width: 64px;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background-color: $primary;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      img {
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover,
+      &:active {
+        img {
+          transform: scale(1.1);
+        }
+        box-shadow: 0 0 40px 0 #53ffaa;
+      }
+    }
+  }
+}
