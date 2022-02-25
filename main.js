@@ -12,7 +12,7 @@ const render = async () => {
   $("#app").append(
     `<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Tamir Assayag</a>
+    Coded by <a href="https://tamirassayag.com">Tamir Assayag</a>
   </div>`
   );
 };
