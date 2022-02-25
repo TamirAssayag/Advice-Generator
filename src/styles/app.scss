@@ -117,13 +117,17 @@ body {
       cursor: pointer;
       transition: all 0.2s ease-in-out;
 
-      img {
+      #icon-dice {
+        background-image: url("./../assets/images/icon-dice.svg");
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
         transition: all 0.2s ease-in-out;
       }
 
       &:hover,
       &:active {
-        img {
+        #icon-dice {
           transform: scale(1.1);
         }
         box-shadow: 0 0 40px 0 #53ffaa;

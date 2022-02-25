@@ -14,7 +14,7 @@ class Card extends Component {
                 </div>
                 <div class="advice-card__divider"></div>
                 <button class="advice-card__btn">
-                    <img src="" />
+                    <span id="icon-dice"></span>
                 </button>
             </div>
         </div>
