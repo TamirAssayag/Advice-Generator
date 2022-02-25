@@ -1,13 +1,10 @@
 import "./src/styles/app.scss";
 import App from "./src/App.js";
 import { $ } from "./src/utils/helpers";
-
-const fetchHtmlAsText = (url) => {
-  return $.ajax(url);
-};
+import Card from "./src/components/Card";
 
 const render = async () => {
-  const cardElement = await fetchHtmlAsText("./card.html");
+  const cardElement = new Card().render();
   $("#app").html(cardElement);
   $("#app").append(
     `<div class="attribution">
