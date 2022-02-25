@@ -7,7 +7,7 @@ const fetchHtmlAsText = (url) => {
 };
 
 const render = async () => {
-  const cardElement = await fetchHtmlAsText("src/components/card.html");
+  const cardElement = await fetchHtmlAsText("./src/components/card.html");
   $("#app").html(cardElement);
   $("#app").append(
     `<div class="attribution">
