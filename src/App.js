@@ -7,7 +7,7 @@ const fetchRandomAdvice = async () => {
     const res = await axios.get("https://api.adviceslip.com/advice");
     return res.data;
   } catch (error) {
-    console.log(error);
+    console.log({ Error: error.message });
   }
 };
 
@@ -19,8 +19,20 @@ const App = () => {
   adviceText.text("Roll the Dice for Advice");
   adviceBtn.on("click", async () => {
     advice = await fetchRandomAdvice();
-    adviceNumber.text(`ADVICE #${advice.slip.id}`);
-    adviceText.text(`"${advice.slip.advice}"`);
+    if (advice) {
+      adviceNumber.text(`ADVICE #${advice?.slip.id}`);
+      adviceText.text(`"${advice?.slip.advice}"`);
+
+      // Since the API caches the results for 2 seconds,
+      // we need to wait for the cache to expire before we can fetch again.
+      adviceBtn.attr("disabled", true);
+      adviceBtn.css({ backgroundColor: "gray", "pointer-events": "none" });
+
+      setTimeout(() => {
+        adviceBtn.removeAttr("disabled");
+        adviceBtn.css({ backgroundColor: "#53ffaa", "pointer-events": "auto" });
+      }, 2000);
+    }
   });
 };
 
